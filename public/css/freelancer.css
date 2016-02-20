@@ -6,6 +6,7 @@
 
 body {
     overflow-x: hidden;
+	font-family:Montserrat !important;
 }
 
 p {
@@ -35,6 +36,33 @@ p.small {
 h2{
 	color:#f36868;
 }
+label{
+	margin-top:15px;
+}
+.footer-above{
+	background-color:#f36868 !important;
+}
+.footer-below{
+	background-color:#f36868 !important;
+}
+.footer-below p{
+	margin-top:15px;
+}
+.row#center{
+	text-align:center;
+}
+.row button{
+	background-color:#f36868 !important;
+	color:white !important;
+	padding-left:70px !important;
+	padding-right:70px !important;
+}
+.row button:hover{
+	background-color:#aaa !important;
+}
+.navbar a:hover{
+	color:#555 !important;
+}
 .navbar{
 	background-color:#f36868;
 	position:absolute !important;
@@ -44,10 +72,19 @@ h2{
 	margin-top:-60px;;	
 }
 .container button{
-	background-color:white;
+	background-color:white !important;
 	border:none;
-	color: #f36868;
+	color: #f36868 !important;
 	font-weight:800;	
+}
+.container button:hover{
+	background-color:#555 !important;
+	color:white !important;
+}
+.intro-text h4{
+	color:white;	
+	width:70%;
+	margin:auto;
 }
 .name{
 	color:#fff;
@@ -71,7 +108,6 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
@@ -144,7 +180,6 @@ header img {
 header .intro-text .name {
     display: block;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 2em;
     font-weight: 700;
 }
@@ -195,7 +230,6 @@ header .intro-text .skills {
 
 .navbar {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
