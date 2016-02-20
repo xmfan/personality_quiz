@@ -5,6 +5,7 @@
   "author": "McHacks",
   "license": "WTFPL",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "express": "latest"
   },
   "engines": {
