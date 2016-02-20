@@ -29,10 +29,12 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
 </head>
 
-<body id="page-top" class="index">
-
+<body id="page-top" class="index" data-ng-app="myApp" data-ng-controller="MainController">
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -45,6 +47,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#page-top">Personality Test</a>
+                <div class="ui-view"></div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -78,7 +81,7 @@ $('.button1').click(function() {document.getElementById('contact').setAttribute(
 
 </script>
                       <button class="button1"> BEGIN TEST</button><br>
-                     
+                     {{test}}
                     </div>
                 </div>
             </div>
@@ -451,9 +454,6 @@ $('.button1').click(function() {document.getElementById('contact').setAttribute(
         </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
@@ -469,6 +469,10 @@ $('.button1').click(function() {document.getElementById('contact').setAttribute(
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
 
+    <!-- Angular -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
