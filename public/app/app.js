@@ -7,6 +7,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('state1', {
       url: "/state1",
       templateUrl: "/html/state1.html"
+    })
+    .state('state2', {
+      url: "/state2",
+      templateUrl: "/html/state2.html"
     });
 });
 
