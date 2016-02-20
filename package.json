@@ -1,0 +1,13 @@
+{
+  "name": "personality_quiz",
+  "version": "0.0.0",
+  "description": "Personality Quiz with long answers",
+  "author": "McHacks",
+  "license": "WTFPL",
+  "dependencies": {
+    "express": "latest"
+  },
+  "engines": {
+    "node": "0.10.26"
+  }
+}
