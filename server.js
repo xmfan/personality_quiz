@@ -484,9 +484,8 @@ app.get('/api/gen', function(req, res) {
         response[name].push(dictionary[name][subname]);
 
         var arr = data[i].children[0].children;
-        var min = arr.length > 5 ? 5 : arr.length;
-        for (var j=0; j<min; j++) {
-            response[name].push(dictionary[name][arr[j].name]);
+        for (var j=0; j<arr.length; j++) {
+            if (arr[j].percentage > 0.6 || arr[j].sampling_error < 0.1) response[name].push(dictionary[name][arr[j].name]);
         }
     }
 
