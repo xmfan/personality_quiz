@@ -139,9 +139,17 @@ header .container {
 	text-align:left;
 }
 .right-col{
-	margin-left:90%;
-	text-align:left;
+	margin-right:5%;
+	text-align:right;
 	margin-top:-37px;
+}
+.personality-title{
+	width:50%;
+	margin-left:0;
+	position:absolute;
+	font-size:50px;
+	padding-top:30px;
+		
 }
 .desc hr{
 	padding:0;

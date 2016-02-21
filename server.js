@@ -8,7 +8,6 @@ var express = require('express'),
     util = require('util'),
     extend = util._extend,
     request = require('request'),
-    Q = require('q'),
     async = require('async');
 
 var port = process.env.PORT || 4000;
