@@ -74,8 +74,24 @@ app.controller('ResultsCtrl', ['$rootScope', '$scope', '$http', '$location', fun
 }]);
 
 app.controller('QuestionsCtrl', ['$rootScope', '$scope', '$http', '$location', function($scope, $rootScope, $http) {
-    $scope.goin = function () {
-        var string = $scope.inp1 + $scope.inp2 + $scope.inp3 + $scope.inp4;
-        console.log(string)
-    }
+    $scope.query=""
+
+    $scope.goin = function() {
+        $scope.query = $scope.inp1 + $scope.inp2 + $scope.inp3 + $scope.inp4;
+        console.log($scope.query)
+        $http({
+            method: 'POST',
+            url: '/api/gen',
+            body: {
+                text: $scope.query
+            }
+            }).then(function successCallback(response) {
+                $scope.trait = angular.copy(response)
+                //$rootScope.trait = $scope.trait
+            });
+        }
+
+
+
+
 }]);
