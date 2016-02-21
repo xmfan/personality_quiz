@@ -472,7 +472,7 @@ app.get('/api/gen', function(req, res) {
             'Big 5': [],
             Needs: [],
             Values: [],
-            stats: []
+            stats: sample.tree.children
         };
 
 
@@ -483,7 +483,11 @@ app.get('/api/gen', function(req, res) {
         var subname = data[i].children[0].name;
         response[name].push(dictionary[name][subname]);
 
-        console.log(data[i].children[0].children);
+        var arr = data[i].children[0].children;
+        var min = arr.length > 5 ? 5 : arr.length;
+        for (var j=0; j<min; j++) {
+            response[name].push(dictionary[name][arr[j].name]);
+        }
     }
 
     res.send(response);
