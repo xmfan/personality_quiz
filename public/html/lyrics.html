@@ -1,0 +1,35 @@
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Test</h2><br><br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-offset-1 col-lg-10">
+                <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                <form name="sentMessage" id="contactForm" novalidate>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Enter your favourite song title:</label>
+                            <textarea class="form-control" ng-model="query" placeholder="type something" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    <div id="success"></div>
+                    <div class="row" id="center">
+                        {{ trait }}
+                        <div class="form-group col-xs-12">
+                            <button type="submit" ng-click="search()" class="btn btn-success btn-lg">SUBMIT</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
