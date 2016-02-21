@@ -11,6 +11,7 @@ footer{
 body {
     overflow-x: hidden;
 	font-family:"Century Gothic" !important;
+	src:url(fonts/07722_CGOTHIC.ttf);
 }
 
 p {
