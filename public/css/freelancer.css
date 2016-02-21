@@ -13,9 +13,10 @@ body{
 	color:#344d6e !important;
 }
 footer{
-	margin-top:80px;
-	padding-top:40px;
-	color:white !important;
+	color:white;
+	text-align:center;
+	background-color:#344d6e;
+	padding:10px;
 }
 body {
     overflow-x: hidden;
@@ -37,7 +38,6 @@ p {
 h3{
 	color:#344d6e;
 	padding-bottom:10px;
-	padding-top:10px;
 }
 hr{
 	border-color:#666;
@@ -51,15 +51,6 @@ h2{
 	color:#344d6e !important;
 }
 label{
-	margin-top:15px;
-}
-.footer-above{
-	background-color:#344d6e !important;
-}
-.footer-below{
-	background-color:#344d6e !important;
-}
-.footer-below p{
 	margin-top:15px;
 }
 .row#center{
@@ -117,31 +108,6 @@ h6 {
     font-weight: 700;
 }
 
-hr.star-light,
-hr.star-primary {
-    margin: 25px auto 30px;
-    padding: 0;
-    max-width: 250px;
-    border: 0;
-    border-top: solid 5px;
-    text-align: center;
-}
-
-hr.star-light:after,
-hr.star-primary:after {
-    content: "\f005";
-    display: inline-block;
-    position: relative;
-    top: -.8em;
-    padding: 0 .25em;
-    font-family: FontAwesome;
-    font-size: 2em;
-}
-
-hr.star-light {
-    border-color: #fff;
-}
-
 .container button{
 	padding:20px;
 	color:black;
@@ -149,7 +115,11 @@ hr.star-light {
 #contact{
 	/*display:none;*/
 }
-
+#half-size{
+	width:30%;
+	border-color:white;
+	border-width:3pt;
+}
 .img-centered {
     margin: 0 auto;
 }
@@ -160,7 +130,7 @@ header {
 }
 
 header .container {
-    padding-top: 100px;
+    padding-top: 170px;
     padding-bottom: 50px;
 }
 
@@ -295,52 +265,6 @@ section.success a.active {
     margin: 0 auto;
     max-width: 400px;
 }
-
-#portfolio .portfolio-item .portfolio-link .caption {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background: rgba(24,188,156,.9);
-    -webkit-transition: all ease .5s;
-    -moz-transition: all ease .5s;
-    transition: all ease .5s;
-}
-
-#portfolio .portfolio-item .portfolio-link .caption:hover {
-    opacity: 1;
-}
-
-#portfolio .portfolio-item .portfolio-link .caption .caption-content {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    height: 20px;
-    margin-top: -12px;
-    text-align: center;
-    font-size: 20px;
-    color: #fff;
-}
-
-#portfolio .portfolio-item .portfolio-link .caption .caption-content i {
-    margin-top: -12px;
-}
-
-#portfolio .portfolio-item .portfolio-link .caption .caption-content h3,
-#portfolio .portfolio-item .portfolio-link .caption .caption-content h4 {
-    margin: 0;
-}
-
-#portfolio * {
-    z-index: 2;
-}
-
-@media(min-width:767px) {
-    #portfolio .portfolio-item {
-        margin: 0 0 30px;
-    }
-}
-
 .btn-outline {
     margin-top: 15px;
     border: solid 2px #fff;
@@ -399,25 +323,6 @@ label{
 form .row:first-child .floating-label-form-group {
     border-top: 1px solid #eee;
 }
-
-footer {
-    color: #fff;
-}
-
-
-footer .footer-above {
-    background-color: #2c3e50;
-}
-
-footer .footer-col {
-    margin-bottom: 50px;
-}
-
-footer .footer-below {
-    padding: 25px;
-    background-color: #233140;
-}
-
 .btn-social {
     display: inline-block;
     width: 50px;
@@ -454,68 +359,4 @@ footer .footer-below {
 
 .scroll-top .btn:focus {
     outline: 0;
-}
-
-.portfolio-modal .modal-content {
-    padding: 100px 0;
-    min-height: 100%;
-    border: 0;
-    border-radius: 0;
-    text-align: center;
-    background-clip: border-box;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-.portfolio-modal .modal-content h2 {
-    margin: 0;
-    font-size: 3em;
-}
-
-.portfolio-modal .modal-content img {
-    margin-bottom: 30px;
-}
-
-.portfolio-modal .modal-content .item-details {
-    margin: 30px 0;
-}
-
-.portfolio-modal .close-modal {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    width: 75px;
-    height: 75px;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.portfolio-modal .close-modal:hover {
-    opacity: .3;
-}
-
-.portfolio-modal .close-modal .lr {
-    z-index: 1051;
-    width: 1px;
-    height: 75px;
-    margin-left: 35px;
-    background-color: #2c3e50;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.portfolio-modal .close-modal .lr .rl {
-    z-index: 1052;
-    width: 1px;
-    height: 75px;
-    background-color: #2c3e50;
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
-
-.portfolio-modal .modal-backdrop {
-    display: none;
-    opacity: 0;
 }
