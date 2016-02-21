@@ -44,7 +44,7 @@ app.controller('LyricsCtrl', ['$scope', '$http', '$location', function($scope, $
                 //$rootScope.trait = $scope.trait
             });
         }
-}]);
+}])
 
 app.controller('ResultsCtrl', ['$rootScope', '$scope', '$http', '$location', function($scope, $rootScope, $http) {
     $scope.traits = {
@@ -73,10 +73,11 @@ app.controller('ResultsCtrl', ['$rootScope', '$scope', '$http', '$location', fun
 }
 }]);
 
-app.controller('QuestionsCtrl', ['$rootScope', '$scope', '$http', '$location', function($scope, $rootScope, $http) {
+app.controller('QuestionsCtrl', ['$scope', '$http', '$location', function($scope, $http) {
     $scope.query=""
+    $scope.trait= ""
 
-    $scope.goin = function() {
+    $scope.getem = function() {
         $scope.query = $scope.inp1 + $scope.inp2 + $scope.inp3 + $scope.inp4;
         console.log($scope.query)
         $http({
@@ -88,6 +89,8 @@ app.controller('QuestionsCtrl', ['$rootScope', '$scope', '$http', '$location', f
             }).then(function successCallback(response) {
                 $scope.trait = angular.copy(response)
                 //$rootScope.trait = $scope.trait
+            }).catch (function (err) {
+                console.log(err)
             });
         }
 
