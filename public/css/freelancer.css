@@ -6,7 +6,7 @@
 
 body {
     overflow-x: hidden;
-	font-family:Montserrat !important;
+	font-family:"Century Gothic" !important;
 }
 
 p {
@@ -15,13 +15,13 @@ p {
 .circle{
 	width:15px;
 	height: 15px;	
-	background-color:#f36868;
+	background-color:#344d6e;
 	border-radius:7px;
 	margin-left:5%;
 	margin-top:-29px;
 }
 h3{
-	color:#f36868;
+	color:#344d6e;
 	padding-bottom:10px;
 	padding-top:10px;
 }
@@ -34,16 +34,16 @@ p.small {
     font-size: 16px;
 }
 h2{
-	color:#f36868;
+	color:#344d6e;
 }
 label{
 	margin-top:15px;
 }
 .footer-above{
-	background-color:#f36868 !important;
+	background-color:#344d6e !important;
 }
 .footer-below{
-	background-color:#f36868 !important;
+	background-color:#344d6e !important;
 }
 .footer-below p{
 	margin-top:15px;
@@ -51,8 +51,8 @@ label{
 .row#center{
 	text-align:center;
 }
-.row button{
-	background-color:#f36868 !important;
+.row#center button{
+	background-color:#344d6e !important;
 	color:white !important;
 	padding-left:70px !important;
 	padding-right:70px !important;
@@ -60,11 +60,8 @@ label{
 .row button:hover{
 	background-color:#aaa !important;
 }
-.navbar a:hover{
-	color:#555 !important;
-}
 .navbar{
-	background-color:#f36868;
+	background-color:#344d6e;
 	position:absolute !important;
 	margin-top:60px;
 }
@@ -74,7 +71,7 @@ label{
 .container button{
 	background-color:white !important;
 	border:none;
-	color: #f36868 !important;
+	color: #344d6e !important;
 	font-weight:800;	
 }
 .container button:hover{
@@ -90,7 +87,7 @@ label{
 	color:#fff;
 }
 header{
-	background-color:#f36868 !important ;	
+	background-color:#344d6e !important ;	
 }
 a,
 a:hover,
@@ -98,7 +95,6 @@ a:focus,
 a:active,
 a.active {
     outline: 0;
-    color: #18bc9c;
 }
 
 h1,
@@ -136,19 +132,6 @@ hr.star-light {
     border-color: #fff;
 }
 
-hr.star-light:after {
-    color: #fff;
-    background-color: #18bc9c;
-}
-
-hr.star-primary {
-    border-color: #2c3e50;
-}
-
-hr.star-primary:after {
-    color: #2c3e50;
-    background-color: #fff;
-}
 .container button{
 	padding:20px;
 	color:black;
@@ -164,7 +147,6 @@ hr.star-primary:after {
 header {
     text-align: center;
     color: #fff;
-    background: #18bc9c;
 }
 
 header .container {
@@ -182,6 +164,9 @@ header .intro-text .name {
     text-transform: uppercase;
     font-size: 2em;
     font-weight: 700;
+}
+.container .row button:hover{
+	background-color:#555555;
 }
 
 header .intro-text .skills {
@@ -232,7 +217,14 @@ header .intro-text .skills {
     text-transform: uppercase;
     font-weight: 700;
 }
-
+.navbar-brand:hover{
+	color:white !important;
+}
+.navbar a{
+	color:white !important;
+.navbar a:hover{
+	color:white !important;
+}
 .navbar a:focus {
     outline: 0;
 }
@@ -261,7 +253,6 @@ section h2 {
 
 section.success {
     color: #fff;
-    background: #18bc9c;
 }
 
 section.success a,
@@ -270,7 +261,7 @@ section.success a:focus,
 section.success a:active,
 section.success a.active {
     outline: 0;
-    color: #2c3e50;
+    color: #fff;
 }
 
 @media(max-width:767px) {
@@ -354,7 +345,6 @@ section.success a.active {
 .btn-outline:active,
 .btn-outline.active {
     border: solid 2px #fff;
-    color: #18bc9c;
     background: #fff;
 }
 
@@ -393,7 +383,7 @@ label{
 }
 
 .floating-label-form-group-with-focus label {
-    color: #f36868;
+    color: #344d6e;
 }
 
 form .row:first-child .floating-label-form-group {
