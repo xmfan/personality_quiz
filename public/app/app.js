@@ -45,7 +45,7 @@ app.controller('LyricsCtrl', ['$scope', '$http', '$location', function($scope, $
                 //$rootScope.trait = $scope.trait
             });
         }
-}]);
+}])
 
 app.controller('ResultsCtrl', ['$rootScope', '$scope', '$http', '$location', function($scope, $rootScope, $http) {
     $scope.traits = {
@@ -74,9 +74,28 @@ app.controller('ResultsCtrl', ['$rootScope', '$scope', '$http', '$location', fun
 }
 }]);
 
-app.controller('QuestionsCtrl', ['$rootScope', '$scope', '$http', '$location', function($scope, $rootScope, $http) {
-    $scope.goin = function () {
-        var string = $scope.inp1 + $scope.inp2 + $scope.inp3 + $scope.inp4;
-        console.log(string)
-    }
+app.controller('QuestionsCtrl', ['$scope', '$http', '$location', function($scope, $http) {
+    $scope.query=""
+    $scope.trait= ""
+
+    $scope.getem = function() {
+        $scope.query = $scope.inp1 + $scope.inp2 + $scope.inp3 + $scope.inp4;
+        console.log($scope.query)
+        $http({
+            method: 'POST',
+            url: '/api/gen',
+            data: {
+                text: $scope.query
+            }
+            }).then(function successCallback(response) {
+                $scope.trait = angular.copy(response)
+                //$rootScope.trait = $scope.trait
+            }).catch (function (err) {
+                console.log(err)
+            });
+        }
+
+
+
+
 }]);
