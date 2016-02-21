@@ -83,7 +83,7 @@ app.controller('QuestionsCtrl', ['$scope', '$http', '$location', function($scope
         $http({
             method: 'POST',
             url: '/api/gen',
-            body: {
+            data: {
                 text: $scope.query
             }
             }).then(function successCallback(response) {
