@@ -19,25 +19,15 @@ var my_profile = "Call me Ishmael. Some years ago-never mind how long precisely-
 
 app.post('/api/gen', function(req, res) {
     console.log(req.body)
-    // do some bluemix thing
-    //console.log(req.body)
+
+    my_profile = req.body;
 
     var personality_insights = watson.personality_insights({
         username: '0af01859-8e30-43e6-91c1-afdf4bc38de5',
         password: '8B17hGcrXduV',
         version: 'v2'
     });
-    /*
-    personality_insights.profile({ text: my_profile }, function (err, profile) {
-        if (err) {
-            console.log(err);
-        } else {
 
-            //res.send(profile);
-            res.send('lamo');
-        }
-    });
-    */
     var sample = {
       "id": "*UNKNOWN*",
       "source": "*UNKNOWN*",
@@ -467,33 +457,45 @@ app.post('/api/gen', function(req, res) {
         ]
       }
     };
-    var data = sample["tree"]["children"],
-        response = {
-            'Big 5': [],
-            Needs: [],
-            Values: [],
-            stats: sample.tree.children
-        };
+    
+    personality_insights.profile({ text: my_profile }, function (err, profile) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(profile);
+
+            var data = profile["tree"]["children"],
+                response = {
+                    'Big 5': [],
+                    Needs: [],
+                    Values: [],
+                    stats: sample.tree.children
+                };
 
 
-    for (var i=0; i<data.length; i++) {
-        var e = data[i];
-        var name = e.name;
+            for (var i=0; i<data.length; i++) {
+                var e = data[i];
+                var name = e.name;
 
-        var subname = data[i].children[0].name;
-        response[name].push(dictionary[name][subname]);
+                var subname = data[i].children[0].name;
+                response[name].push(dictionary[name][subname]);
 
-        var arr = data[i].children[0].children;
-        for (var j=0; j<arr.length; j++) {
-            var string = '';
-            if (arr[j].percentage > 0.6 || arr[j].sampling_error < 0.1) {
-                var string = dictionary[name][arr[j].name] + ' (confidence: ' + arr[j].percentage + ')';
-                response[name].push(string);
+                var arr = data[i].children[0].children;
+                for (var j=0; j<arr.length; j++) {
+                    var string = '';
+                    if (arr[j].percentage > 0.6 || arr[j].sampling_error < 0.07) {
+                        var string = dictionary[name][arr[j].name] + ' (confidence: ' + arr[j].percentage + ')';
+                        response[name].push(string);
+                    }
+                }
             }
-        }
-    }
 
-    res.send(response);
+            res.send(response);
+        }
+    });
+    
+    
+    
 });
 
 /*app.post('/api/getProfile', function(req, res) {
