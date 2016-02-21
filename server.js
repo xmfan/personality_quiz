@@ -65,12 +65,11 @@ app.get('/api/lyrics', function(req, res) {
                 },
                 json: true // Automatically parses the JSON string in the response
         };
-        rp(options2).then(function (response) {
-            var lyrics = response.message.body.lyrics.lyrics_body.replace("******* This Lyrics is NOT for Commercial use *******","");
-            res.send(lyrics);
-            console.log('User has %d repos', repos.length);
-        })
-
+        return rp(options2);
+    }).then(function (response) {
+        var lyrics = response.message.body.lyrics.lyrics_body.replace("******* This Lyrics is NOT for Commercial use *******","");
+        res.send(lyrics);
+        console.log('User has %d repos', repos.length);
     })
     .catch(function (err) {
         // API call failed... yeah no
