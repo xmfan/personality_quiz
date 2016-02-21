@@ -6,7 +6,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('state1', {
       url: "/questions",
-      templateUrl: "/html/questions.html"
+      templateUrl: "/html/questions.html",
+      controller: "QuestionsCtrl"
     })
     .state('state2', {
       url: "/state2",
@@ -24,13 +25,14 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 	console.log('MainController operational');
 }]);
 
-app.controller('LyricsCtrl', ['$rootScope', '$scope', '$http', '$location', function($scope, $rootScope, $http) {
+app.controller('LyricsCtrl', ['$scope', '$http', '$location', function($scope, $http) {
 
     $scope.query = "";
 
     $scope.trait = ""
 
     $scope.search = function() {
+        console.log($scope.query)
         $http({
             method: 'GET',
             url: '/api/lyrics',
@@ -38,8 +40,8 @@ app.controller('LyricsCtrl', ['$rootScope', '$scope', '$http', '$location', func
                 query: $scope.query
             }
             }).then(function successCallback(response) {
-                $scope.trait = response.data
-                $rootScope.trait = $scope.trait
+                $scope.trait = angular.copy(response)
+                //$rootScope.trait = $scope.trait
             });
         }
 }]);
@@ -69,4 +71,11 @@ app.controller('ResultsCtrl', ['$rootScope', '$scope', '$http', '$location', fun
         }
         ]
 }
+}]);
+
+app.controller('QuestionsCtrl', ['$rootScope', '$scope', '$http', '$location', function($scope, $rootScope, $http) {
+    $scope.goin = function () {
+        var string = $scope.inp1 + $scope.inp2 + $scope.inp3 + $scope.inp4;
+        console.log(string)
+    }
 }]);

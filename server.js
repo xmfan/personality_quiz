@@ -8,7 +8,6 @@ var express = require('express'),
     util = require('util'),
     extend = util._extend,
     request = require('request'),
-    Q = require('q'),
     async = require('async');
 
 var port = process.env.PORT || 4000;
@@ -18,7 +17,8 @@ app.use(express.static('public'));
 
 var my_profile = "Call me Ishmael. Some years ago-never mind how long precisely-having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodically knocking people's hats off-then, I account it high time to get to sea as soon as I can.";
 
-app.get('/api/gen', function(req, res) {
+app.post('/api/gen', function(req, res) {
+    console.log(req.body)
     // do some bluemix thing
     //console.log(req.body)
 
@@ -543,10 +543,29 @@ app.get('/api/lyrics', function(req, res) {
         return rp(options2);
     }).then(function (response) {
         var lyrics = response.message.body.lyrics.lyrics_body.replace("******* This Lyrics is NOT for Commercial use *******","");
-        res.send(lyrics);
+        return lyrics;
+        //res.send(lyrics);
         console.log('User has %d repos', repos.length);
+    }).then(function (response) {
+       var options3 = {
+           method: 'POST',
+           uri: 'http://localhost:4000/api/gen/',
+        headers: {
+            'User-Agent': 'Request-Promise'
+        },
+        body: {
+            text: response
+        },
+        json: true // Automatically parses the JSON string in the response
+        };
+        return rp(options3);
+    }).then(function(response) {
+        //console.log(response)
+        res.send(response)
     })
+
     .catch(function (err) {
+        console.log(err)
         // API call failed... yeah no
     });
 });

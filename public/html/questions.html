@@ -13,29 +13,29 @@
                 <form name="sentMessage" id="contactForm" novalidate>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Question 1</label>
-                            <textarea rows="3" class="form-control" placeholder="type something" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                            <label>You rarely deviate from your habits</label>
+                            <textarea ng-model="inp1" rows="3" class="form-control" placeholder="type something" id="message" required data-validation-required-message="Please enter a message."></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Question 2</label>
-                            <textarea rows="3" class="form-control" placeholder="type something" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                            <label>You usually place yourself nearer to the side than in the center of the room</label>
+                            <textarea ng-model="inp2" rows="3" class="form-control" placeholder="type something" id="message" required data-validation-required-message="Please enter a message."></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Question 3</label>
-                            <textarea rows="3" class="form-control" placeholder="type something" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                            <label>You know how to put every minute of your time to good purpose</label>
+                            <textarea ng-model="inp3" rows="3" class="form-control" placeholder="type something" id="message" required data-validation-required-message="Please enter a message."></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Question 4</label>
-                            <textarea rows="3" class="form-control" placeholder="type something" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                            <label>You often contemplate the complexity of life</label>
+                            <textarea ng-model="inp4" rows="3" class="form-control" placeholder="type something" id="message" required data-validation-required-message="Please enter a message."></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                     <div id="success"></div>
                     <div class="row" id="center">
                         <div class="form-group col-xs-12">
-                            <button type="submit" class="btn btn-success btn-lg">SUBMIT</button>
+                            <button ng-click="goin" type="submit" class="btn btn-success btn-lg">SUBMIT</button>
                         </div>
                     </div>
                 </form>
