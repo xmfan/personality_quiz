@@ -3,6 +3,9 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+.row h2{
+	color:#344d6e !important;
+}
 footer{
 	margin-top:80px;
 	padding-top:40px;
@@ -39,7 +42,7 @@ p.small {
     font-size: 16px;
 }
 h2{
-	color:#344d6e;
+	color:#344d6e !important;
 }
 label{
 	margin-top:15px;
@@ -68,10 +71,6 @@ label{
 .navbar{
 	background-color:#344d6e;
 	position:absolute !important;
-	margin-top:60px;
-}
-.container{
-	margin-top:-60px;;	
 }
 .container button{
 	background-color:white !important;
