@@ -134,6 +134,21 @@ header .container {
     padding-bottom: 50px;
 }
 
+.left-col{
+	margin-left:50%;
+	text-align:left;
+}
+.right-col{
+	margin-left:90%;
+	text-align:left;
+	margin-top:-37px;
+}
+.desc hr{
+	padding:0;
+	width:45%;
+	margin-left:50%;
+}
+
 header img {
     display: block;
     margin: 0 auto 20px;

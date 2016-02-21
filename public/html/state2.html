@@ -33,10 +33,24 @@
                 <div class="circle"></div>
 
                 <br>
+                <div class="desc">
                 <h4> Description </h4>
                 <p> {{ traits.text }}</p>
-                <p> {{ traits.stats }} </p>
+                
+                <p class="left-col"> {{traits.stats[0].name}} &amp{{traits.stats[0].children[0].name}} </p>
+                <hr>
+                <p class="left-col"> {{traits.stats[0].children[0].children[0].name}}</p> 
+                <p class="right-col"> {{traits.stats[0].children[0].children[0].percentage}}</p> 
+                <hr>
+                <p class="left-col"> {{traits.stats[0].children[0].children[0].children[0].name}}</p>
+                <p class="right-col"> {{traits.stats[0].children[0].children[0].children[0].percentage}}</p> 
+                <hr>
+                <p class="left-col"> {{traits.stats[1].name}}</p>
+                <p class="left-col"> {{traits.stats[2].name}}</p>
+                <hr>
+                
                 <p> Percentage: {{ traits.stats[0].children[0].children[0].percentage }}
+                </p>
                     <!-- Given number between 0, 1: we should display with your circles -->
                 <!-- Use the {{}} to reference angularjs variables-->
                 <!-- you can see the traits object in app.js -->
