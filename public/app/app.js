@@ -5,8 +5,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
     .state('state1', {
-      url: "/state1",
-      templateUrl: "/html/state1.html"
+      url: "/questions",
+      templateUrl: "/html/questions.html"
     })
     .state('state2', {
       url: "/state2",
