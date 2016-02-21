@@ -40,7 +40,8 @@ app.controller('LyricsCtrl', ['$scope', '$http', '$location', function($scope, $
                 query: $scope.query
             }
             }).then(function successCallback(response) {
-                $scope.trait = angular.copy(response)
+                $scope.trait = angular.copy(response);
+				console.log($scope.trait);
                 //$rootScope.trait = $scope.trait
             });
         }
