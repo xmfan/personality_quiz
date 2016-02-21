@@ -3,6 +3,12 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+#contact{
+	background-color:white !important;	
+}
+body{
+	background-color:#344d6e;	
+}
 .row h2{
 	color:#344d6e !important;
 }
