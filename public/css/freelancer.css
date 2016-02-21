@@ -143,6 +143,9 @@ header .container {
 	text-align:right;
 	margin-top:-37px;
 }
+.hidden{
+	display:none;	
+}
 .personality-title{
 	width:50%;
 	margin-left:0;
