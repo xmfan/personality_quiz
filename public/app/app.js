@@ -13,8 +13,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "/html/state2.html"
     })
 	.state('state3', {
-      url: "/state3",
-      templateUrl: "/html/state3.html",
+      url: "/lyrics",
+      templateUrl: "/html/lyrics.html",
       controller: "LyricsCtrl"
     });
 });
@@ -23,7 +23,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 	console.log('MainController operational');
 }]);
 
-app.controller('LyricsCtrl', ['$scope', '$http', function($scope, $http) {
+app.controller('LyricsCtrl', ['$rootScope', '$scope', '$http', '$location', function($scope, $rootScope, $http) {
 
     $scope.query = "";
 
@@ -38,6 +38,7 @@ app.controller('LyricsCtrl', ['$scope', '$http', function($scope, $http) {
             }
             }).then(function successCallback(response) {
                 $scope.trait = response.data
+                $rootScope.trait = $scope.trait
             });
         }
 }]);
