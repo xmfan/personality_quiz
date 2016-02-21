@@ -5,10 +5,11 @@
   "author": "McHacks",
   "license": "WTFPL",
   "dependencies": {
+    "async": "latest",
     "body-parser": "^1.15.0",
     "express": "latest",
-    "watson-developer-cloud": "^1.2.3",
-    "async" : "latest"
+    "q": "^1.4.1",
+    "watson-developer-cloud": "^1.2.3"
   },
   "engines": {
     "node": "0.10.26"
