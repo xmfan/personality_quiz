@@ -7,7 +7,8 @@
   "dependencies": {
     "body-parser": "^1.15.0",
     "express": "latest",
-    "watson-developer-cloud": "^1.2.3"
+    "watson-developer-cloud": "^1.2.3",
+    "async" : "latest"
   },
   "engines": {
     "node": "0.10.26"
