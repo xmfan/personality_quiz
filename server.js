@@ -477,10 +477,13 @@ app.get('/api/gen', function(req, res) {
 
 
     for (var i=0; i<data.length; i++) {
-        console.log(data[i]);
         var e = data[i];
         var name = e.name;
-        response[name].push(dictionary[name]);
+
+        var subname = data[i].children[0].name;
+        response[name].push(dictionary[name][subname]);
+
+        console.log(data[i].children[0].children);
     }
 
     res.send(response);
