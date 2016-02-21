@@ -485,7 +485,11 @@ app.get('/api/gen', function(req, res) {
 
         var arr = data[i].children[0].children;
         for (var j=0; j<arr.length; j++) {
-            if (arr[j].percentage > 0.6 || arr[j].sampling_error < 0.1) response[name].push(dictionary[name][arr[j].name]);
+            var string = '';
+            if (arr[j].percentage > 0.6 || arr[j].sampling_error < 0.1) {
+                var string = dictionary[name][arr[j].name] + ' (confidence: ' + arr[j].percentage + ')';
+                response[name].push(string);
+            }
         }
     }
 
