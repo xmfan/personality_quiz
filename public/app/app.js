@@ -10,7 +10,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('state2', {
       url: "/state2",
-      templateUrl: "/html/state2.html"
+      templateUrl: "/html/state2.html",
+      controller: "ResultsCtrl"
     })
 	.state('state3', {
       url: "/lyrics",
@@ -43,3 +44,29 @@ app.controller('LyricsCtrl', ['$rootScope', '$scope', '$http', '$location', func
         }
 }]);
 
+app.controller('ResultsCtrl', ['$rootScope', '$scope', '$http', '$location', function($scope, $rootScope, $http) {
+    $scope.traits = {
+    text: 'you are this this and this',
+    stats: [{
+            name: "Personality",
+            children: [{
+                name: "Extraversion",
+                children: [{
+                    name:"Openness",
+                    percentage: "0.50",
+                    sampling_error: "0.01",
+                    children: [{
+                        name: "Adventurousness",
+                        percentage: "0.02",
+                        sampling_error: "0.01",
+                    }]
+                }]
+            }]
+        }, {
+            name: "Needs"
+        }, {
+            name: "Values"
+        }
+        ]
+}
+}]);
