@@ -14,7 +14,7 @@
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Enter your favourite song title:</label>
-                            <textarea class="form-control" placeholder="type something" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                            <textarea class="form-control" ng-model="query" placeholder="type something" id="message" required data-validation-required-message="Please enter a message."></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -22,8 +22,9 @@
                     <br>
                     <div id="success"></div>
                     <div class="row" id="center">
+                        {{ trait }}
                         <div class="form-group col-xs-12">
-                            <button type="submit" class="btn btn-success btn-lg">SUBMIT</button>
+                            <button type="submit" ng-click="search()" class="btn btn-success btn-lg">SUBMIT</button>
                         </div>
                     </div>
                 </form>

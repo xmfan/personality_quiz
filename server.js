@@ -39,11 +39,11 @@ app.get('/api/lyrics', function(req, res) {
         uri: 'http://api.musixmatch.com/ws/1.1/track.search',
         qs: {
             apikey: api_key,
-            q: 'never gonna give you up',
+            q: req.query.query,
             f_has_lyrics: '1',
             f_lyrics_language: 'en',
             page_size: '10',
-            s_artist_rating: 'desc'
+            s_track_rating: 'desc'
         },
         headers: {
             'User-Agent': 'Request-Promise'
