@@ -4,6 +4,7 @@ var express = require('express'),
 	app = express();
 var bodyParser = require('body-parser');
 var watson = require('watson-developer-cloud');
+var rp = require('request-promise');
 
 var port = process.env.PORT || 4000;
 
@@ -31,6 +32,51 @@ app.get('/api/gen', function(req, res) {
         res.send(profile);
     });
 });
+
+app.get('/api/lyrics', function(req, res) {
+    var api_key = '4e667bc5c7980001d48eb3bd5aaac3da'
+    var options = {
+        uri: 'http://api.musixmatch.com/ws/1.1/track.search',
+        qs: {
+            apikey: api_key,
+            q: 'never gonna give you up',
+            f_has_lyrics: '1',
+            f_lyrics_language: 'en',
+            page_size: '10',
+            s_artist_rating: 'desc'
+        },
+        headers: {
+            'User-Agent': 'Request-Promise'
+        },
+        json: true // Automatically parses the JSON string in the response
+    };
+
+    rp(options).then(function (response) {
+        var trackId = response.message.body.track_list[0].track.track_id;
+
+        var options2 = {
+                uri: 'http://api.musixmatch.com/ws/1.1/track.lyrics.get',
+                qs: {
+                    apikey: api_key,
+                    track_id: trackId
+                },
+                headers: {
+                    'User-Agent': 'Request-Promise'
+                },
+                json: true // Automatically parses the JSON string in the response
+        };
+        rp(options2).then(function (response) {
+            var lyrics = response.message.body.lyrics.lyrics_body.replace("******* This Lyrics is NOT for Commercial use *******","");
+            res.send(lyrics);
+            console.log('User has %d repos', repos.length);
+        })
+
+    })
+    .catch(function (err) {
+        // API call failed... yeah no
+    });
+});
+
 
 app.listen(port, function() {
 	console.log('Server running on: 4000');
