@@ -483,7 +483,7 @@ app.post('/api/gen', function(req, res) {
                 var arr = data[i].children[0].children;
                 for (var j=0; j<arr.length; j++) {
                     var string = '';
-                    if (arr[j].percentage > 0.6 || arr[j].sampling_error < 0.07) {
+                    if (arr[j].percentage > 0.6) {
                         var string = dictionary[name][arr[j].name] + ' (confidence: ' + arr[j].percentage + ')';
                         response[name].push(string);
                     }
